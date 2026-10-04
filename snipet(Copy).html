@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Febry Handi — Software Engineer</title>
+<meta name="description" content="Portofolio Febry Handi, Software Engineer & Cybersecurity Enthusiast." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+<style>
+  :root{
+    --bg-0:#050506;
+    --bg-1:#08080a;
+    --bg-2:#0d0d10;
+    --text:#f5f5f7;
+    --text-soft:rgba(255,255,255,.72);
+    --muted:rgba(255,255,255,.46);
+    --faint:rgba(255,255,255,.26);
+    --line:rgba(255,255,255,.09);
+    --line-strong:rgba(255,255,255,.16);
+    --line-top:rgba(255,255,255,.28);
+    --glass:rgba(255,255,255,.04);
+    --glass-2:rgba(255,255,255,.07);
+    --glass-3:rgba(255,255,255,.11);
+    --accent:#ffffff;
+    --accent-soft:rgba(255,255,255,.65);
+    --radius-lg:22px;
+    --radius-md:16px;
+    --shadow:0 18px 50px -18px rgba(0,0,0,.9);
+    --maxw:1140px;
+    --ease:cubic-bezier(.22,1,.36,1);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    min-height:100vh;
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    color:var(--text);
+    background-color:var(--bg-0);
+    background-image:
+      radial-gradient(ellipse 90% 50% at 50% 0%, rgba(255,255,255,.055) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 40% at 50% 100%, rgba(255,255,255,.025) 0%, transparent 65%);
+    background-attachment:fixed;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;}
+  h1,h2,h3,h4,p{margin:0;}
+  ul{margin:0;padding:0;list-style:none;}
+
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    pointer-events:none;z-index:0;opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .wrap{
+    width:100%;
+    max-width:var(--maxw);
+    margin-inline:auto;
+    padding-inline:24px;
+    position:relative;
+    z-index:1;
+  }
+  section{padding-block:64px;}
+  @media (max-width:720px){ section{padding-block:48px;} }
+
+  .glass{
+    background:linear-gradient(180deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.015) 100%);
+    border:1px solid var(--line);
+    backdrop-filter:blur(24px) saturate(120%);
+    -webkit-backdrop-filter:blur(24px) saturate(120%);
+    border-radius:var(--radius-lg);
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 1px 0 0 rgba(255,255,255,.09) inset, 0 12px 40px rgba(0,0,0,.6);
+  }
+  .glass::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;
+    height:1px;
+    background:linear-gradient(90deg,transparent,var(--line-top),transparent);
+    pointer-events:none;
+    border-radius:inherit;
+    z-index:2;
+  }
+
+  header{
+    position:sticky;top:0;z-index:60;
+    padding-top:12px;
+    transition:padding .35s var(--ease);
+  }
+  header .wrap{
+    max-width:100%;
+    padding-inline:12px;
+  }
+  header.scrolled{padding-top:8px;}
+
+  .navbar{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:18px;
+    padding:10px 12px 10px 16px;
+    border-radius:999px;
+    transition:background .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease);
+  }
+  header.scrolled .navbar{
+    background:linear-gradient(180deg, rgba(15,15,18,.9) 0%, rgba(5,5,6,.85) 100%);
+    box-shadow:0 14px 40px -18px rgba(0,0,0,1), inset 0 1px 0 rgba(255,255,255,.08);
+    border-color:var(--line-strong);
+  }
+
+  .brand{display:flex;align-items:center;gap:11px;font-weight:650;letter-spacing:-.01em;}
+  .brand .mark{
+    width:38px;height:38px;flex:none;
+    display:grid;place-items:center;
+    border-radius:12px;
+    background:linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.02));
+    border:1px solid var(--line-strong);
+    position:relative;
+    overflow:hidden;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.14);
+  }
+  .brand .mark::before{
+    content:"";
+    position:absolute;top:0;left:22%;right:22%;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.42),transparent);
+    pointer-events:none;
+  }
+  .brand .mark svg{width:19px;height:19px;position:relative;z-index:1;}
+
+  .nav-links{display:flex;align-items:center;gap:4px;}
+  .nav-links a{
+    padding:8px 14px;border-radius:999px;font-size:.875rem;
+    color:var(--text-soft);
+    transition:color .25s var(--ease), background .25s var(--ease);
+  }
+  .nav-links a:hover{color:var(--text);background:var(--glass-2);}
+
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:9px 17px;border-radius:999px;
+    font-size:.85rem;font-weight:700;color:#000;background:#fff;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 1px 0 0 rgba(255,255,255,.3) inset, 0 6px 20px rgba(255,255,255,.1);
+    transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);
+  }
+  .nav-cta::before{
+    content:"";
+    position:absolute;top:0;left:20%;right:20%;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);
+    pointer-events:none;
+  }
+  .nav-cta:hover{transform:translateY(-2px);background:rgba(255,255,255,.92);box-shadow:0 1px 0 0 rgba(255,255,255,.3) inset, 0 10px 26px rgba(255,255,255,.18);}
+  .nav-cta svg{width:15px;height:15px;position:relative;z-index:1;}
+
+  .nav-toggle{
+    display:none;width:42px;height:42px;border-radius:12px;
+    place-items:center;
+    background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.02));
+    border:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+  }
+  .nav-toggle::before{
+    content:"";
+    position:absolute;top:0;left:25%;right:25%;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);
+    pointer-events:none;
+  }
+  .nav-toggle svg{width:19px;height:19px;position:relative;z-index:1;}
+
+  @media (max-width:920px){
+    .nav-links{
+      position:absolute;top:calc(100% + 10px);left:0;right:0;
+      flex-direction:column;align-items:stretch;gap:2px;padding:12px;
+      border-radius:var(--radius-lg);
+      background:linear-gradient(180deg, rgba(15,15,18,.96), rgba(5,5,6,.95));
+      border:1px solid var(--line-strong);
+      backdrop-filter:blur(20px);
+      box-shadow:var(--shadow);
+      opacity:0;visibility:hidden;transform:translateY(-8px);
+      transition:opacity .28s var(--ease), transform .28s var(--ease), visibility .28s;
+    }
+    .nav-links.open{opacity:1;visibility:visible;transform:translateY(0);}
+    .nav-links a{padding:11px 14px;}
+    .nav-toggle{display:grid;}
+    .navbar{position:relative;}
+    .nav-cta{display:none;}
+  }
+
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:12px 22px;border-radius:999px;
+    font-size:.9rem;font-weight:600;letter-spacing:-.005em;
+    position:relative;
+    overflow:hidden;
+    transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease), border-color .25s var(--ease);
+  }
+  .btn svg{width:16px;height:16px;position:relative;z-index:1;}
+  .btn > span, .btn{position:relative;z-index:1;}
+  .btn-primary{
+    color:#000;background:#fff;
+    box-shadow:0 1px 0 0 rgba(255,255,255,.3) inset, 0 8px 24px rgba(255,255,255,.12);
+  }
+  .btn-primary::before{
+    content:"";
+    position:absolute;top:0;left:15%;right:15%;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);
+    pointer-events:none;
+  }
+  .btn-primary:hover{transform:translateY(-2px);background:rgba(255,255,255,.92);box-shadow:0 1px 0 0 rgba(255,255,255,.3) inset, 0 12px 32px rgba(255,255,255,.2);}
+  .btn-ghost{
+    color:var(--text-soft);
+    background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    border:1px solid var(--line-strong);
+    backdrop-filter:blur(14px);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+  }
+  .btn-ghost::before{
+    content:"";
+    position:absolute;top:0;left:20%;right:20%;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.34),transparent);
+    pointer-events:none;
+  }
+  .btn-ghost:hover{color:var(--text);background:linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.03));transform:translateY(-2px);}
+
+  .hero{padding-top:12px;padding-bottom:48px;}
+  .hero .wrap{max-width:100%;padding-inline:0;width:100%;}
+
+  .profile-card{
+    border-radius:0;
+    overflow:visible;
+    border-left:0;
+    border-right:0;
+    border-top:0;
+    box-shadow:none;
+    width:100%;
+    background:transparent;
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+  }
+  .profile-card::before{display:none;}
+
+  .profile-cover{
+    height:240px;
+    position:relative;
+    border-bottom:1px solid rgba(255,255,255,.06);
+    overflow:hidden;
+    border-radius:0;
+    background:#000;
+    width:100%;
+  }
+  .profile-cover img{
+    width:100%;height:100%;
+    object-fit:cover;object-position:center;display:block;
+  }
+  .profile-cover::after{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(
+      180deg,
+      rgba(0,0,0,.1) 0%,
+      rgba(0,0,0,.35) 55%,
+      rgba(5,5,6,.98) 100%
+    );
+    pointer-events:none;
+    border-radius:0;
+    z-index:1;
+  }
+
+  .profile-body{
+    padding:0 48px 40px;
+    width:100%;
+    max-width:900px;
+    margin-inline:auto;
+    background:transparent;
+  }
+
+  .profile-hero{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    margin-top:-84px;
+    position:relative;
+    z-index:2;
+  }
+
+  .dev-badge{
+    display:inline-flex;align-items:center;gap:7px;
+    padding:8px 18px;border-radius:999px;
+    background:linear-gradient(180deg, rgba(28,28,32,.95) 0%, rgba(12,12,15,.95) 100%);
+    border:1px solid rgba(255,255,255,.12);
+    font-size:.78rem;font-weight:600;
+    letter-spacing:.01em;
+    color:rgba(255,255,255,.92);
+    margin-bottom:18px;
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 1px 0 0 rgba(255,255,255,.1) inset, 0 8px 24px rgba(0,0,0,.6);
+  }
+  .dev-badge::before{
+    content:"";
+    position:absolute;top:0;left:20%;right:20%;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+    pointer-events:none;
+  }
+
+  .avatar-ring-wrap{
+    position:relative;display:inline-block;
+    isolation:isolate;flex:none;z-index:3;
+  }
+  .avatar-ring{
+    position:relative;width:136px;height:136px;
+    border-radius:50%;padding:0;background:transparent;z-index:2;
+  }
+  .avatar-ring::before{
+    content:'';position:absolute;inset:-18px;border-radius:50%;
+    background-image:url('https://cdn.nekohime.site/file/v4flt21y.png');
+    background-size:contain;background-repeat:no-repeat;background-position:center;
+    animation:ringSpin 25s linear infinite;
+    pointer-events:none;z-index:3;
+    filter:brightness(1.5) contrast(1.2) drop-shadow(0 0 8px rgba(255,255,255,.5));
+  }
+  .avatar-ring-wrap::after{
+    content:'';position:absolute;inset:-26px;border-radius:50%;
+    background:radial-gradient(circle, rgba(255,255,255,.12) 0%, transparent 65%);
+    pointer-events:none;z-index:-2;filter:blur(14px);
+  }
+  @keyframes ringSpin{ to{ transform:rotate(360deg); } }
+
+  .avatar-ring img{
+    width:100%;height:100%;
+    object-fit:cover;border-radius:50%;display:block;
+    position:relative;z-index:2;
+  }
+
+  .profile-info{margin-top:22px;width:100%;}
+
+  .profile-name-row{
+    display:inline-flex;flex-wrap:wrap;
+    align-items:center;justify-content:center;gap:0;
+    margin-inline:auto;
+  }
+  .profile-name-row h1{
+    margin:0;
+    font-size:clamp(1.35rem, 2.6vw, 1.85rem);
+    font-weight:700;letter-spacing:-.028em;
+    line-height:1.15;color:var(--text);
+  }
+
+  .engineer-badge{
+    display:inline-block;height:32px;width:auto;object-fit:contain;
+    flex-shrink:0;vertical-align:middle;
+    pointer-events:none;user-select:none;
+    filter:drop-shadow(0 2px 8px rgba(0,0,0,.6));
+    margin-inline-end:6px;
+  }
+
+  .verified-badge{
+    display:inline-grid;place-items:center;
+    width:26px;height:26px;flex-shrink:0;
+    filter:drop-shadow(0 2px 8px rgba(59,130,246,.55));
+    margin-inline-start:2px;
+  }
+  .verified-badge svg{width:100%;height:100%;display:block;}
+
+  .profile-headline{
+    margin-top:16px;
+    display:inline-block;
+    padding:12px 24px;
+    border-radius:14px;
+    background:linear-gradient(180deg, rgba(255,255,255,.055) 0%, rgba(255,255,255,.018) 100%);
+    border:1px solid rgba(255,255,255,.1);
+    font-size:.92rem;font-weight:500;
+    color:var(--text-soft);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    position:relative;
+    overflow:hidden;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+    max-width:520px;
+  }
+  .profile-headline::before{
+    content:"";
+    position:absolute;top:0;left:20%;right:20%;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);
+    pointer-events:none;
+  }
+
+  .profile-meta{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;
+    margin-top:16px;font-size:.86rem;color:var(--muted);
+  }
+  .profile-meta span{display:inline-flex;align-items:center;gap:7px;}
+  .profile-meta svg{width:15px;height:15px;color:var(--accent-soft);}
+
+  .profile-actions{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin-top:22px;
+    margin-inline:auto;
+    flex-wrap:wrap;
+    max-width:440px;
+  }
+  .profile-actions .btn{
+    flex:1 1 0;
+    min-width:0;
+    justify-content:center;
+  }
+  @media (max-width:520px){
+    .profile-actions{max-width:100%;}
+  }
+
+  .profile-stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    margin-top:24px;
+    border-radius:20px;
+    background:linear-gradient(180deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.015) 100%);
+    border:1px solid var(--line);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.08), 0 12px 40px rgba(0,0,0,.6);
+    overflow:hidden;
+    position:relative;
+  }
+  .profile-stats::before{
+    content:"";
+    position:absolute;top:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.26),transparent);
+    pointer-events:none;
+    z-index:2;
+  }
+
+  .profile-stat{
+    padding:28px 18px;text-align:center;position:relative;
+  }
+
+  .profile-stat:nth-child(odd)::after{
+    content:"";position:absolute;top:24%;bottom:24%;right:0;width:1px;
+    background:linear-gradient(180deg, transparent, rgba(255,255,255,.16), transparent);
+  }
+
+  .profile-stat:nth-child(-n+2)::before{
+    content:"";position:absolute;left:14%;right:14%;bottom:0;height:1px;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.1), transparent);
+  }
+
+  .profile-stat b{
+    display:block;
+    font-family:"Space Grotesk","Inter",system-ui,sans-serif;
+    font-size:clamp(1.7rem, 3.4vw, 2.1rem);
+    font-weight:700;letter-spacing:-.04em;
+    line-height:1;color:var(--text);margin-bottom:10px;
+  }
+
+  .profile-stat span{
+    display:block;font-size:.74rem;color:var(--muted);
+    letter-spacing:.02em;line-height:1.35;
+  }
+
+  @media (max-width:760px){
+    .profile-stat{padding:24px 14px;}
+    .profile-stat b{font-size:1.6rem;}
+    .profile-stat span{font-size:.7rem;}
+  }
+
+  @media (max-width:760px){
+    .profile-body{padding:0 24px 28px;}
+    .avatar-ring{width:112px;height:112px;}
+    .avatar-ring::before{inset:-14px;}
+    .profile-hero{margin-top:-70px;}
+    .profile-cover{height:180px;}
+    .engineer-badge{height:26px;margin-inline-end:5px;}
+    .verified-badge{width:22px;height:22px;margin-inline-start:2px;}
+    .profile-name-row h1{font-size:1.35rem;}
+  }
+
+  .sec-head{max-width:620px;margin-bottom:32px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.74rem;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent-soft);margin-bottom:14px;
+  }
+  .eyebrow::before{
+    content:"";width:24px;height:1px;
+    background:linear-gradient(90deg,rgba(255,255,255,.6),transparent);
+  }
+  .sec-head h2{
+    font-size:clamp(1.6rem, 3.1vw, 2.15rem);
+    font-weight:700;letter-spacing:-.028em;
+    line-height:1.18;color:var(--text);
+  }
+  .sec-head p{margin-top:14px;color:var(--muted);font-size:.97rem;}
+
+  /* ============================================================
+     SNIPPET FEED — layout feed gaya sosial, tema gelap glass
+     ============================================================ */
+  .snippet-feed{
+    display:grid;
+    gap:20px;
+    max-width:720px;
+    margin-inline:auto;
+  }
+
+  .snippet-card{
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    position:relative;
+    background:linear-gradient(180deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.015) 100%);
+    border:1px solid var(--line);
+    backdrop-filter:blur(24px) saturate(120%);
+    -webkit-backdrop-filter:blur(24px) saturate(120%);
+    box-shadow:0 1px 0 0 rgba(255,255,255,.09) inset, 0 12px 40px rgba(0,0,0,.6);
+    transition:transform .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
+  }
+  .snippet-card::before{
+    content:"";
+    position:absolute;top:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
+    pointer-events:none;z-index:3;
+  }
+  .snippet-card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(255,255,255,.2);
+    box-shadow:0 30px 60px -26px rgba(0,0,0,1), 0 1px 0 0 rgba(255,255,255,.14) inset;
+  }
+
+  /* Header author */
+  .snippet-head{
+    display:flex;align-items:flex-start;justify-content:space-between;
+    gap:12px;
+    padding:18px 20px 12px;
+  }
+  .snippet-author{
+    display:flex;align-items:center;gap:12px;
+    min-width:0;
+  }
+  .snippet-avatar{
+    width:42px;height:42px;flex:none;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid rgba(255,255,255,.32);
+    box-shadow:0 0 0 2px rgba(255,255,255,.05), 0 4px 14px rgba(0,0,0,.5);
+  }
+  .snippet-author-info{min-width:0;}
+  .snippet-author-name{
+    display:flex;align-items:center;gap:6px;
+    font-size:.9rem;font-weight:650;line-height:1.2;
+    color:var(--text);
+  }
+  .snippet-author-name a{transition:color .2s var(--ease);}
+  .snippet-author-name a:hover{color:#fff;}
+  .snippet-verified{
+    width:18px;height:18px;flex:none;
+    filter:drop-shadow(0 1px 5px rgba(59,130,246,.45));
+  }
+  .snippet-author-meta{
+    font-size:.76rem;color:var(--muted);margin-top:3px;
+  }
+  .snippet-menu{
+    width:34px;height:34px;flex:none;
+    display:grid;place-items:center;
+    border-radius:10px;
+    color:var(--muted);
+    transition:background .2s var(--ease), color .2s var(--ease);
+  }
+  .snippet-menu:hover{background:rgba(255,255,255,.06);color:var(--text);}
+  .snippet-menu svg{width:16px;height:16px;}
+
+  /* Body */
+  .snippet-body{padding:0 20px 14px;}
+  .snippet-body h3{
+    font-size:1rem;font-weight:650;letter-spacing:-.015em;
+    color:var(--text);margin-bottom:6px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .snippet-body h3 svg{width:16px;height:16px;color:var(--accent-soft);flex:none;}
+  .snippet-body > p{
+    font-size:.875rem;color:var(--muted);
+    line-height:1.62;margin-bottom:12px;
+  }
+  .snippet-tags{
+    display:flex;flex-wrap:wrap;gap:6px;
+  }
+  .snippet-tag{
+    font-size:.7rem;font-weight:600;letter-spacing:.01em;
+    padding:4px 10px;border-radius:999px;
+    color:var(--text-soft);
+    background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.02));
+    border:1px solid rgba(255,255,255,.1);
+    position:relative;overflow:hidden;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+  }
+  .snippet-tag::before{
+    content:"";
+    position:absolute;top:0;left:30%;right:30%;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
+    pointer-events:none;
+  }
+
+  /* Code block */
+  .snippet-code{
+    margin:0 20px 14px;
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(0,0,0,.55);
+    position:relative;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+  }
+  .snippet-code-head{
+    display:flex;align-items:center;gap:10px;
+    padding:9px 14px;
+    border-bottom:1px solid rgba(255,255,255,.06);
+    background:rgba(255,255,255,.03);
+  }
+  .snippet-code-head svg.file{
+    width:13px;height:13px;flex:none;
+    color:var(--muted);
+  }
+  .snippet-code-fname{
+    font-family:ui-monospace,"SF Mono",Menlo,Monaco,Consolas,monospace;
+    font-size:.74rem;letter-spacing:.01em;
+    color:var(--text-soft);
+  }
+  .snippet-copy{
+    margin-left:auto;
+    width:28px;height:28px;
+    display:grid;place-items:center;
+    border-radius:8px;
+    color:var(--muted);
+    transition:color .2s var(--ease), background .2s var(--ease);
+  }
+  .snippet-copy:hover{color:var(--text);background:rgba(255,255,255,.06);}
+  .snippet-copy svg{width:14px;height:14px;pointer-events:none;}
+  .snippet-copy.copied{color:#86efac;}
+
+  /* Prism Tomorrow — override background agar menyatu dengan card */
+  .snippet-code pre[class*="language-"],
+  .snippet-code code[class*="language-"] {
+    background: transparent !important;
+    text-shadow: none !important;
+    font-family: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
+    white-space: pre;
+  }
+  .snippet-code pre[class*="language-"] {
+    margin: 0;
+    padding: 16px 18px;
+    font-size: .8rem;
+    line-height: 1.7;
+    overflow-x: auto;
+    border-radius: 0;
+    border: 0;
+  }
+  .snippet-code code[class*="language-"] {
+    font-size: inherit;
+    color: #e2e8f0;
+  }
+
+  /* Aksen token warna lebih hidup */
+  .snippet-code .token.keyword { color: #c792ea; }
+  .snippet-code .token.function { color: #82aaff; }
+  .snippet-code .token.string { color: #c3e88d; }
+  .snippet-code .token.number,
+  .snippet-code .token.boolean { color: #f78c6c; }
+  .snippet-code .token.builtin,
+  .snippet-code .token.class-name,
+  .snippet-code .token.maybe-class-name { color: #ffcb6b; }
+  .snippet-code .token.operator { color: #89ddff; }
+  .snippet-code .token.comment,
+  .snippet-code .token.prolog,
+  .snippet-code .token.doctype,
+  .snippet-code .token.cdata { color: #6b7280; font-style: italic; }
+  .snippet-code .token.punctuation { color: #d1d5db; }
+  .snippet-code .token.property,
+  .snippet-code .token.tag,
+  .snippet-code .token.constant,
+  .snippet-code .token.symbol { color: #f07178; }
+  .snippet-code .token.type,
+  .snippet-code .token.type-annotation,
+  .snippet-code .token.return-type { color: #f78c6c; }
+  .snippet-code .token.parameter { color: #d1d5db; }
+  .snippet-code .token.attr-name,
+  .snippet-code .token.selector { color: #ffcb6b; }
+  .snippet-code .token.attr-value { color: #c3e88d; }
+  .snippet-code .token.variable { color: #e2e8f0; }
+  .snippet-code .token.important { color: #f78c6c; font-weight: 600; }
+
+  .snippet-code pre::-webkit-scrollbar{height:7px;}
+  .snippet-code pre::-webkit-scrollbar-track{background:rgba(255,255,255,.03);}
+  .snippet-code pre::-webkit-scrollbar-thumb{background:rgba(255,255,255,.14);border-radius:8px;}
+  .snippet-code pre::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.24);}
+
+  /* Action bar */
+  .snippet-actions{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:12px;
+    padding:12px 20px 14px;
+    border-top:1px solid rgba(255,255,255,.06);
+  }
+  .snippet-actions-left{display:flex;align-items:center;gap:4px;}
+  .snippet-action{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:7px 10px;border-radius:9px;
+    font-size:.78rem;font-weight:500;
+    color:var(--muted);
+    transition:color .2s var(--ease), background .2s var(--ease);
+  }
+  .snippet-action svg{width:15px;height:15px;pointer-events:none;}
+  .snippet-action:hover{color:var(--text);background:rgba(255,255,255,.06);}
+  .snippet-action.liked{color:#fda4af;}
+  .snippet-action.liked svg{fill:currentColor;}
+  .snippet-action.saved{color:#fcd34d;}
+  .snippet-action.saved svg{fill:currentColor;}
+
+  .snippet-actions-right{
+    display:flex;align-items:center;gap:14px;
+    font-size:.72rem;color:var(--muted);
+  }
+  .snippet-actions-right span{display:inline-flex;align-items:center;gap:5px;}
+  .snippet-actions-right svg{width:13px;height:13px;}
+
+  @media (max-width:520px){
+    .snippet-head{padding:16px 14px 10px;}
+    .snippet-body{padding:0 14px 12px;}
+    .snippet-code{margin-inline:12px;}
+    .snippet-actions{padding:11px 14px 13px;}
+    .snippet-body h3{font-size:.94rem;}
+    .snippet-author-meta{font-size:.72rem;}
+  }
+
+  .contact-wrap{
+    max-width:640px;
+    margin-inline:auto;
+  }
+
+  .form{padding:32px;}
+  .field{margin-bottom:16px;}
+  .field label{
+    display:block;margin-bottom:8px;
+    font-size:.76rem;font-weight:700;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+  }
+  .field input,.field textarea{
+    width:100%;padding:13px 15px;
+    font:inherit;font-size:.9rem;color:var(--text);
+    border-radius:12px;
+    border:1px solid var(--line);
+    background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015));
+    outline:none;
+    transition:border-color .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);
+  }
+  .field textarea{resize:vertical;min-height:118px;}
+  .field input::placeholder,.field textarea::placeholder{color:var(--faint);}
+  .field input:focus,.field textarea:focus{
+    border-color:rgba(255,255,255,.28);
+    background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    box-shadow:0 0 0 3px rgba(255,255,255,.09);
+  }
+  .form .btn{width:100%;justify-content:center;margin-top:6px;}
+  .form-note{margin-top:14px;font-size:.78rem;color:var(--muted);text-align:center;}
+
+  footer{
+    margin-top:16px;border-top:1px solid var(--line);padding-block:30px;
+  }
+  .foot{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:16px;
+  }
+
+  .socials{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+  .socials a{
+    width:44px;height:44px;
+    display:grid;place-items:center;
+    border-radius:14px;
+    color:var(--muted);
+    background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.02));
+    border:1px solid var(--line);
+    backdrop-filter:blur(12px);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+    position:relative;
+    overflow:hidden;
+    transition:all .28s var(--ease);
+  }
+  .socials a::before{
+    content:"";
+    position:absolute;top:0;left:22%;right:22%;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.34),transparent);
+    pointer-events:none;
+  }
+  .socials a:hover{
+    color:var(--text);
+    transform:translateY(-3px);
+    border-color:var(--line-strong);
+    background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.12), 0 12px 26px -12px rgba(0,0,0,.8);
+  }
+  .socials svg{width:18px;height:18px;position:relative;z-index:1;}
+
+  .reveal{
+    opacity:0;transform:translateY(24px);
+    transition:opacity .8s var(--ease), transform .8s var(--ease);
+  }
+  .reveal.in{opacity:1;transform:none;}
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition-duration:.01ms!important;}
+    .reveal{opacity:1;transform:none;}
+    html{scroll-behavior:auto;}
+    .avatar-ring::before{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap">
+    <nav class="navbar glass" aria-label="Navigasi utama">
+      <a class="brand" href="#top" aria-label="Beranda">
+        <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8.5 8.5 5 12l3.5 3.5"/>
+            <path d="M15.5 8.5 19 12l-3.5 3.5"/>
+            <path d="M13.4 6.2 10.6 17.8"/>
+          </svg>
+        </span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#proyek">Proyek</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+
+      <a class="nav-cta" href="#kontak">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2.5" y="4.5" width="19" height="15" rx="3"/>
+          <path d="m3 7 8.2 5.6a1.5 1.5 0 0 0 1.6 0L21 7"/>
+        </svg>
+        Hubungi Saya
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="wrap">
+      <article class="profile-card reveal">
+        <div class="profile-cover" aria-hidden="true">
+          <img src="https://cdn.nekohime.site/file/az77va5t.jpeg" alt="">
+        </div>
+
+        <div class="profile-body">
+
+          <div class="profile-hero">
+            <span class="dev-badge">I'm a Developer</span>
+
+            <div class="avatar-ring-wrap" aria-hidden="true">
+              <div class="avatar-ring">
+                <img src="https://i.pravatar.cc/300?img=12" alt="Febry Handi">
+              </div>
+            </div>
+
+            <div class="profile-info">
+              <div class="profile-name-row">
+                <img src="https://cdn.nekohime.site/file/m2d7j0s4.png" alt="Engineer" class="engineer-badge">
+                <h1 id="heroTitle">Febry Handi</h1>
+                <span class="verified-badge" aria-label="Terverifikasi">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 1.8l2.6 1.9 3.2-.3 1 3.05 2.8 1.55-1.15 3 .55 3.2-2.85 1.45-.55 3.2-3.2-.3L12 22.2l-2.6-1.9-3.2.3-1-3.05L2.4 15.9l1.15-3-.55-3.2L5.85 8.25l.55-3.2 3.2.3z" fill="rgba(59,130,246,.25)"/>
+                    <path d="M12 3.6l1.9 1.4 2.4-.2.75 2.3 2.1 1.15-.85 2.25.4 2.4-2.15 1.1-.4 2.4-2.4-.2L12 20.4l-1.9-1.4-2.4.2-.75-2.3-2.1-1.15.85-2.25-.4-2.4 2.15-1.1.4-2.4 2.4.2z" fill="#3b82f6"/>
+                    <path d="m10.4 12.3 1.3 1.3 2.6-2.7" fill="none" stroke="#ffffff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+
+              <p class="profile-headline">Software Engineer &amp; Cybersecurity Enthusiast</p>
+
+              <div class="profile-meta">
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 21s7-5.3 7-11a7 7 0 1 0-14 0c0 5.7 7 11 7 11Z"/>
+                    <circle cx="12" cy="10" r="2.6"/>
+                  </svg>
+                  Pekuncen
+                </span>
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2.5" y="4.5" width="19" height="15" rx="3"/>
+                    <path d="m3 7 8.2 5.6a1.5 1.5 0 0 0 1.6 0L21 7"/>
+                  </svg>
+                  febryhnd@msn.com
+                </span>
+                <span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M3.5 12h17"/><path d="M12 3a15 15 0 0 1 0 18"/><path d="M12 3a15 15 0 0 0 0 18"/>
+                  </svg>
+                  about.me
+                </span>
+              </div>
+
+              <div class="profile-actions">
+                <a class="btn btn-primary" href="#kontak">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2.5" y="4.5" width="19" height="15" rx="3"/>
+                    <path d="m3 7 8.2 5.6a1.5 1.5 0 0 0 1.6 0L21 7"/>
+                  </svg>
+                  Hubungi Saya
+                </a>
+                <a class="btn btn-ghost" href="#proyek">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="7" width="18" height="13" rx="2.5"/>
+                    <path d="M8.5 7V5.6A1.6 1.6 0 0 1 10.1 4h3.8a1.6 1.6 0 0 1 1.6 1.6V7"/>
+                  </svg>
+                  Lihat Proyek
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-stats">
+            <div class="profile-stat"><b>4</b><span>Projects &amp; Eksperimen</span></div>
+            <div class="profile-stat"><b>8+</b><span>bulan pengalaman</span></div>
+            <div class="profile-stat"><b>5</b><span>Klien Aktif</span></div>
+            <div class="profile-stat"><b>86</b><span>Skor Lighthouse</span></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MY PROJECT — feed snippet gaya sosial
+       ============================================================ -->
+  <section id="proyek" aria-labelledby="proyekTitle">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">My Project</span>
+        <h2 id="proyekTitle">Show All Project</h2>
+        <p>Kumpulan snippet, eksperimen, dan utilitas yang saya pakai sehari-hari. Silakan disalin, dipelajari, atau dimodifikasi.</p>
+      </div>
+
+      <div class="snippet-feed">
+
+        <!-- SNIPPET 1 -->
+        <article class="snippet-card reveal">
+          <div class="snippet-head">
+            <div class="snippet-author">
+              <img class="snippet-avatar" src="https://i.pravatar.cc/300?img=12" alt="Febry Handi">
+              <div class="snippet-author-info">
+                <div class="snippet-author-name">
+                  <a href="#">@febryhnd</a>
+                  <svg class="snippet-verified" viewBox="0 0 24 24" aria-label="Terverifikasi">
+                    <path d="M12 1.8l2.6 1.9 3.2-.3 1 3.05 2.8 1.55-1.15 3 .55 3.2-2.85 1.45-.55 3.2-3.2-.3L12 22.2l-2.6-1.9-3.2.3-1-3.05L2.4 15.9l1.15-3-.55-3.2L5.85 8.25l.55-3.2 3.2.3z" fill="rgba(59,130,246,.25)"/>
+                    <path d="M12 3.6l1.9 1.4 2.4-.2.75 2.3 2.1 1.15-.85 2.25.4 2.4-2.15 1.1-.4 2.4-2.4-.2L12 20.4l-1.9-1.4-2.4.2-.75-2.3-2.1-1.15.85-2.25-.4-2.4 2.15-1.1.4-2.4 2.4.2z" fill="#3b82f6"/>
+                    <path d="m10.4 12.3 1.3 1.3 2.6-2.7" fill="none" stroke="#ffffff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <p class="snippet-author-meta">Febry Handi · 2 jam lalu</p>
+              </div>
+            </div>
+            <button class="snippet-menu" aria-label="Menu">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <circle cx="12" cy="5" r="1.6"/>
+                <circle cx="12" cy="12" r="1.6"/>
+                <circle cx="12" cy="19" r="1.6"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="snippet-body">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+              Custom React Hook: useDebounce
+            </h3>
+            <p>Hook simple buat nge-delay value, cocok buat search input biar gak spam API call. Udah saya pake di production, works like a charm.</p>
+            <div class="snippet-tags">
+              <span class="snippet-tag">#react</span>
+              <span class="snippet-tag">#hooks</span>
+              <span class="snippet-tag">#javascript</span>
+              <span class="snippet-tag">#typescript</span>
+            </div>
+          </div>
+
+          <div class="snippet-code">
+            <div class="snippet-code-head">
+              <svg class="file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+              <span class="snippet-code-fname">useDebounce.ts</span>
+              <button class="snippet-copy" aria-label="Copy code">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2.4"/>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+              </button>
+            </div>
+<pre><code class="language-typescript">import { useState, useEffect } from 'react';
+
+export function useDebounce&lt;T&gt;(value: T, delay: number = 500): T {
+  const [debounced, setDebounced] = useState(value);
+
+  useEffect(() =&gt; {
+    const timer = setTimeout(() =&gt; setDebounced(value), delay);
+    return () =&gt; clearTimeout(timer);
+  }, [value, delay]);
+
+  return debounced;
+}</code></pre>
+          </div>
+
+          <div class="snippet-actions">
+            <div class="snippet-actions-left">
+              <button class="snippet-action like-btn" aria-label="Suka">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21.2l7.7-7.7 1.1-1.1a5.5 5.5 0 0 0 0-7.8Z"/>
+                </svg>
+                <span>128</span>
+              </button>
+              <button class="snippet-action" aria-label="Komentar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.2 9.2 0 0 1-3.3-.6L3 21l1.7-4.6A8.4 8.4 0 0 1 3.6 11.5 8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4Z"/>
+                </svg>
+                <span>24</span>
+              </button>
+              <button class="snippet-action save-btn" aria-label="Simpan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M19 21 12 17.5 5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                </svg>
+                <span class="save-label">Simpan</span>
+              </button>
+            </div>
+            <div class="snippet-actions-right">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+                1.2k
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M12 7v5l3.2 1.8"/>
+                </svg>
+                3 hari lalu
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- SNIPPET 2 -->
+        <article class="snippet-card reveal">
+          <div class="snippet-head">
+            <div class="snippet-author">
+              <img class="snippet-avatar" src="https://i.pravatar.cc/300?img=12" alt="Febry Handi">
+              <div class="snippet-author-info">
+                <div class="snippet-author-name">
+                  <a href="#">@febryhnd</a>
+                  <svg class="snippet-verified" viewBox="0 0 24 24" aria-label="Terverifikasi">
+                    <path d="M12 1.8l2.6 1.9 3.2-.3 1 3.05 2.8 1.55-1.15 3 .55 3.2-2.85 1.45-.55 3.2-3.2-.3L12 22.2l-2.6-1.9-3.2.3-1-3.05L2.4 15.9l1.15-3-.55-3.2L5.85 8.25l.55-3.2 3.2.3z" fill="rgba(59,130,246,.25)"/>
+                    <path d="M12 3.6l1.9 1.4 2.4-.2.75 2.3 2.1 1.15-.85 2.25.4 2.4-2.15 1.1-.4 2.4-2.4-.2L12 20.4l-1.9-1.4-2.4.2-.75-2.3-2.1-1.15.85-2.25-.4-2.4 2.15-1.1.4-2.4 2.4.2z" fill="#3b82f6"/>
+                    <path d="m10.4 12.3 1.3 1.3 2.6-2.7" fill="none" stroke="#ffffff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <p class="snippet-author-meta">Febry Handi · 5 jam lalu</p>
+              </div>
+            </div>
+            <button class="snippet-menu" aria-label="Menu">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <circle cx="12" cy="5" r="1.6"/>
+                <circle cx="12" cy="12" r="1.6"/>
+                <circle cx="12" cy="19" r="1.6"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="snippet-body">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 7V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/>
+                <path d="M4 7h16v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/>
+                <path d="M9 12h6"/>
+              </svg>
+              Utility Hook: useLocalStorage
+            </h3>
+            <p>State React yang otomatis sinkron ke localStorage. Gak perlu useEffect manual di tiap komponen lagi — tinggal pakai hook-nya.</p>
+            <div class="snippet-tags">
+              <span class="snippet-tag">#react</span>
+              <span class="snippet-tag">#hooks</span>
+              <span class="snippet-tag">#localstorage</span>
+            </div>
+          </div>
+
+          <div class="snippet-code">
+            <div class="snippet-code-head">
+              <svg class="file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+              <span class="snippet-code-fname">useLocalStorage.ts</span>
+              <button class="snippet-copy" aria-label="Copy code">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2.4"/>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+              </button>
+            </div>
+<pre><code class="language-typescript">import { useEffect, useState } from 'react';
+
+export function useLocalStorage&lt;T&gt;(key: string, initial: T) {
+  const [value, setValue] = useState&lt;T&gt;(() =&gt; {
+    try {
+      const raw = localStorage.getItem(key);
+      return raw ? (JSON.parse(raw) as T) : initial;
+    } catch {
+      return initial;
+    }
+  });
+
+  useEffect(() =&gt; {
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
+
+  return [value, setValue] as const;
+}</code></pre>
+          </div>
+
+          <div class="snippet-actions">
+            <div class="snippet-actions-left">
+              <button class="snippet-action like-btn" aria-label="Suka">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21.2l7.7-7.7 1.1-1.1a5.5 5.5 0 0 0 0-7.8Z"/>
+                </svg>
+                <span>89</span>
+              </button>
+              <button class="snippet-action" aria-label="Komentar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.2 9.2 0 0 1-3.3-.6L3 21l1.7-4.6A8.4 8.4 0 0 1 3.6 11.5 8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4Z"/>
+                </svg>
+                <span>12</span>
+              </button>
+              <button class="snippet-action save-btn" aria-label="Simpan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M19 21 12 17.5 5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                </svg>
+                <span class="save-label">Simpan</span>
+              </button>
+            </div>
+            <div class="snippet-actions-right">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+                892
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M12 7v5l3.2 1.8"/>
+                </svg>
+                5 jam lalu
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- SNIPPET 3 -->
+        <article class="snippet-card reveal">
+          <div class="snippet-head">
+            <div class="snippet-author">
+              <img class="snippet-avatar" src="https://i.pravatar.cc/300?img=12" alt="Febry Handi">
+              <div class="snippet-author-info">
+                <div class="snippet-author-name">
+                  <a href="#">@febryhnd</a>
+                  <svg class="snippet-verified" viewBox="0 0 24 24" aria-label="Terverifikasi">
+                    <path d="M12 1.8l2.6 1.9 3.2-.3 1 3.05 2.8 1.55-1.15 3 .55 3.2-2.85 1.45-.55 3.2-3.2-.3L12 22.2l-2.6-1.9-3.2.3-1-3.05L2.4 15.9l1.15-3-.55-3.2L5.85 8.25l.55-3.2 3.2.3z" fill="rgba(59,130,246,.25)"/>
+                    <path d="M12 3.6l1.9 1.4 2.4-.2.75 2.3 2.1 1.15-.85 2.25.4 2.4-2.15 1.1-.4 2.4-2.4-.2L12 20.4l-1.9-1.4-2.4.2-.75-2.3-2.1-1.15.85-2.25-.4-2.4 2.15-1.1.4-2.4 2.4.2z" fill="#3b82f6"/>
+                    <path d="m10.4 12.3 1.3 1.3 2.6-2.7" fill="none" stroke="#ffffff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <p class="snippet-author-meta">Febry Handi · 1 minggu lalu</p>
+              </div>
+            </div>
+            <button class="snippet-menu" aria-label="Menu">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <circle cx="12" cy="5" r="1.6"/>
+                <circle cx="12" cy="12" r="1.6"/>
+                <circle cx="12" cy="19" r="1.6"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="snippet-body">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16v16H4z"/>
+                <path d="M4 9h16"/><path d="M9 4v16"/>
+              </svg>
+              CSS Utility: Fluid Container &amp; Grid
+            </h3>
+            <p>Dua utility CSS pakai <code style="font-family:ui-monospace,monospace;font-size:.8rem;color:rgba(255,255,255,.85);">clamp()</code> biar layout otomatis scale dari mobile sampai desktop tanpa media query.</p>
+            <div class="snippet-tags">
+              <span class="snippet-tag">#css</span>
+              <span class="snippet-tag">#responsive</span>
+              <span class="snippet-tag">#design-system</span>
+            </div>
+          </div>
+
+          <div class="snippet-code">
+            <div class="snippet-code-head">
+              <svg class="file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+              <span class="snippet-code-fname">container.css</span>
+              <button class="snippet-copy" aria-label="Copy code">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2.4"/>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+              </button>
+            </div>
+<pre><code class="language-css">/* Fluid container — otomatis scale, tanpa media query */
+.container {
+  width: 100%;
+  max-width: clamp(320px, 92vw, 1140px);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+/* Responsive grid auto-fit */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}</code></pre>
+          </div>
+
+          <div class="snippet-actions">
+            <div class="snippet-actions-left">
+              <button class="snippet-action like-btn" aria-label="Suka">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21.2l7.7-7.7 1.1-1.1a5.5 5.5 0 0 0 0-7.8Z"/>
+                </svg>
+                <span>215</span>
+              </button>
+              <button class="snippet-action" aria-label="Komentar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.2 9.2 0 0 1-3.3-.6L3 21l1.7-4.6A8.4 8.4 0 0 1 3.6 11.5 8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4Z"/>
+                </svg>
+                <span>31</span>
+              </button>
+              <button class="snippet-action save-btn" aria-label="Simpan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M19 21 12 17.5 5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                </svg>
+                <span class="save-label">Simpan</span>
+              </button>
+            </div>
+            <div class="snippet-actions-right">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+                3.4k
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M12 7v5l3.2 1.8"/>
+                </svg>
+                1 minggu lalu
+              </span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak" aria-labelledby="kontakTitle">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Kontak</span>
+        <h2 id="kontakTitle">Mari membangun sesuatu bersama</h2>
+        <p>Terbuka untuk proyek freelance, kolaborasi jangka panjang, maupun sekadar bertukar pikiran.</p>
+      </div>
+
+      <div class="contact-wrap">
+        <form class="form glass reveal" id="contactForm" novalidate>
+          <div class="field"><label for="nama">Nama</label><input type="text" id="nama" name="nama" placeholder="Nama lengkap Anda" required /></div>
+          <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="nama@perusahaan.com" required /></div>
+          <div class="field"><label for="subjek">Subjek</label><input type="text" id="subjek" name="subjek" placeholder="Contoh: Redesign landing page" /></div>
+          <div class="field"><label for="pesan">Pesan</label><textarea id="pesan" name="pesan" placeholder="Ceritakan sedikit tentang proyek Anda..." required></textarea></div>
+
+          <button class="btn btn-primary" type="submit">
+            Kirim Pesan
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 3 10.5 13.5"/><path d="M21 3l-6.6 18-3.9-7.5L3 9.6z"/>
+            </svg>
+          </button>
+          <p class="form-note" id="formNote">Formulir ini adalah demo — tidak mengirim data ke server.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="socials">
+        <a href="#" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 1.8a10.2 10.2 0 0 0-3.23 19.88c.51.1.7-.22.7-.49v-1.9c-2.84.62-3.44-1.2-3.44-1.2-.46-1.18-1.13-1.5-1.13-1.5-.93-.63.07-.62.07-.62 1.02.07 1.56 1.05 1.56 1.05.91 1.56 2.39 1.11 2.97.85.09-.66.36-1.11.65-1.37-2.27-.26-4.65-1.14-4.65-5.05 0-1.12.4-2.03 1.05-2.75-.11-.26-.46-1.3.1-2.71 0 0 .86-.27 2.81 1.05a9.7 9.7 0 0 1 5.12 0c1.95-1.32 2.81-1.05 2.81-1.05.56 1.41.21 2.45.1 2.71.65.72 1.05 1.63 1.05 2.75 0 3.92-2.39 4.79-4.67 5.04.37.32.7.94.7 1.9v2.81c0 .27.19.6.71.49A10.2 10.2 0 0 0 12 1.8Z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Telegram">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Prism core + bahasa yang dipakai -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js"></script>
+
+<script>
+  const header = document.querySelector('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 12);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks  = document.getElementById('navLinks');
+
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(open));
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const delay = Math.min(i * 70, 280);
+        setTimeout(() => el.classList.add('in'), delay);
+        io.unobserve(el);
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -60px 0px' });
+
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('in'));
+  }
+
+  const form = document.getElementById('contactForm');
+  const note = document.getElementById('formNote');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nama = form.nama.value.trim();
+    const email = form.email.value.trim();
+    const pesan = form.pesan.value.trim();
+
+    if (!nama || !email || !pesan) {
+      note.textContent = 'Mohon lengkapi nama, email, dan pesan.';
+      note.style.color = 'rgba(255,180,180,.9)';
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      note.textContent = 'Format email belum benar.';
+      note.style.color = 'rgba(255,180,180,.9)';
+      return;
+    }
+
+    note.textContent = `Terima kasih, ${nama}. Pesan Anda sudah tercatat (demo).`;
+    note.style.color = 'rgba(255,255,255,.85)';
+    form.reset();
+  });
+
+  /* ============================================================
+     SNIPPET CARD — interactions
+     ============================================================ */
+  const ICON_COPY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2.4"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+  const ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>';
+
+  // Copy code
+  document.querySelectorAll('.snippet-copy').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const card = btn.closest('.snippet-card');
+      if (!card) return;
+      const code = card.querySelector('code');
+      if (!code) return;
+
+      const original = btn.innerHTML;
+      const done = () => {
+        btn.classList.add('copied');
+        btn.innerHTML = ICON_CHECK;
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = original;
+        }, 1400);
+      };
+
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(code.textContent);
+          done();
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = code.textContent;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          done();
+        }
+      } catch (err) { /* ignore */ }
+    });
+  });
+
+  // Like toggle
+  document.querySelectorAll('.like-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const span = btn.querySelector('span');
+      if (!span) return;
+      const current = parseInt(span.textContent.replace(/[^\d]/g, ''), 10) || 0;
+      const liked = btn.classList.toggle('liked');
+      span.textContent = liked ? current + 1 : current - 1;
+    });
+  });
+
+  // Save toggle
+  document.querySelectorAll('.save-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const label = btn.querySelector('.save-label');
+      const saved = btn.classList.toggle('saved');
+      if (label) label.textContent = saved ? 'Disimpan' : 'Simpan';
+    });
+  });
+
+  // Prism highlight
+  if (window.Prism) {
+    try { Prism.highlightAll(); } catch (e) { /* ignore */ }
+  }
+</script>
+</body>
+</html>
